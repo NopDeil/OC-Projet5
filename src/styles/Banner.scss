@@ -1,0 +1,29 @@
+@import "../utils/styles/variables.scss";
+
+section {
+  background-color: $secondary_color;
+  margin: 40px auto;
+  width: 90%;
+  height: 223px;
+  box-shadow: 5px 5px 10px rgba($secondary_color, 0.4);
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    opacity: 0.5;
+    position: absolute;
+  }
+  h1 {
+    color: $third_color;
+    position: relative;
+    text-align: center;
+    margin: 85px;
+    font-size: 42px;
+    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+      -1px 1px 0 black;
+  }
+}
