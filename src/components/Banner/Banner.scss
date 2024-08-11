@@ -1,6 +1,6 @@
-@import "../utils/styles/variables.scss";
+@import "../../utils/variable.scss";
 
-section {
+.banner {
   background-color: $secondary_color;
   margin: 40px auto;
   width: 90%;

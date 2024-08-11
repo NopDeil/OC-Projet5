@@ -1,20 +1,11 @@
 import React from "react";
-import "../../styles/Banner.scss";
-import { useLocation } from 'react-router-dom';
-import banner_home from "../../assets/banner_home.jpg";
-import banner_about from "../../assets/banner_about.jpg";
+import "./Banner.scss";
 
-
-function Banner() {
-
-const location = useLocation();
-const locationPath = location.pathname;
-
-
+function Banner({ image_banner, titre_banner, alt_banner }) {
   return (
-    <section>
-      <img  alt="bannière paysage" src={locationPath === "/" ? banner_home : banner_about } /> 
-      <h1>Chez vous, partout et ailleurs</h1>
+    <section className="banner">
+      <img alt={alt_banner} src={image_banner} />
+      {titre_banner ? <h1>{titre_banner}</h1> : null}
     </section>
   );
 }

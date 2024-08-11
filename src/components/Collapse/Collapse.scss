@@ -1,0 +1,81 @@
+@import "../../utils/variable.scss";
+
+.collapse {
+  background-color: $primary_color;
+  margin-bottom: 30px;
+  border-radius: 5px;
+
+  .collapse-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  &[animation="1"] > .containerText {
+    animation: openCollapse 600ms forwards;
+  }
+
+  &[animation="0"] > .containerText {
+    animation: closeCollapse 600ms ease-in-out forwards;
+  }
+
+  h2 {
+    color: $third_color;
+    margin-left: 15px;
+  }
+
+  i {
+    color: $third_color;
+    margin-right: 15px;
+    font-size: x-large;
+
+    &[animation="1"] {
+      transform: rotate(-180deg);
+      transition: transform 600ms;
+    }
+
+    &[animation="0"] {
+      transform: rotate(0deg);
+      transition: transform 600ms;
+    }
+  }
+
+  .containerText {
+    padding: 35px 30px 17px 30px;
+    background-color: lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+@keyframes openCollapse {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-70px);
+  }
+  100% {
+    opacity: 1;
+    max-height: 400px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeCollapse {
+  0% {
+    opacity: 1;
+    max-height: 400px;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-70px);
+  }
+}

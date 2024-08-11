@@ -1,0 +1,19 @@
+@import "../../utils/variable.scss";
+
+.error {
+  text-align: center;
+  h2 {
+    color: $primary_color;
+    font-size: 200px;
+    margin: 87px auto;
+  }
+  p {
+    color: $primary_color;
+    font-size: 27px;
+    margin-bottom: 3em;
+  }
+  a {
+    font-size: 15px;
+    color: $secondary_color;
+  }
+}
