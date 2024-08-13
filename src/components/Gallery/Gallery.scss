@@ -1,0 +1,13 @@
+@import "../../utils/variable.scss";
+
+$bg-gallery: #f6f6f6;
+
+.gallery {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  width: 87%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
