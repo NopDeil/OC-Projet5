@@ -1,7 +1,7 @@
 import "./Collapse.scss";
 import { useState } from "react";
 
-function Collaspe({ titleCollapse, textCollapse }) {
+function Collapse({ titleCollapse, textCollapse }) {
   const [isOpen, setIsOpen] = useState(false);
   const [animation, setAnimation] = useState(0);
 
@@ -17,28 +17,23 @@ function Collaspe({ titleCollapse, textCollapse }) {
     }, 590);
   };
 
-  return isOpen ? (
-    <div className="collapse" animation={animation}>
-      <div className="collapse-header">
+  return (
+    <div className="collapse-container">
+      <div className="collapse" animation={animation}>
         <h2>{titleCollapse}</h2>
         <i
-          className="fa-solid fa-chevron-up icone"
-          onClick={closeCollapse}
+          className="fa-solid fa-chevron-up"
+          onClick={isOpen ? closeCollapse : openCollapse}
           animation={animation}
         ></i>
       </div>
-      <div className="containerText">{textCollapse}</div>
-    </div>
-  ) : (
-    <div className="collapse">
-      <h2>{titleCollapse}</h2>
-      <i
-        className="fa-solid fa-chevron-up icone"
-        onClick={openCollapse}
-        animation={animation}
-      ></i>
+      {isOpen && (
+        <div className="collapseText" animation={animation}>
+          {textCollapse}
+        </div>
+      )}
     </div>
   );
 }
 
-export default Collaspe;
+export default Collapse;

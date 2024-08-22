@@ -4,7 +4,7 @@ import Datas from "../../datas/infos.json";
 
 
 function Gallery() {
-    return ( Datas && Datas.length>0 && (
+    return (
         <section className="gallery">
             {Datas.map(data => {
                 return (
@@ -17,7 +17,7 @@ function Gallery() {
                 )
             })}
         </section>
-    ))
+    )
 }
 
 export default Gallery;

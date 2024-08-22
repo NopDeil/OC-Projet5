@@ -1,0 +1,79 @@
+@import "../../utils/variable.scss";
+
+.accommodation {
+  width: 90%;
+  margin: 30px auto;
+  .accommodation-description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    div {
+      h2 {
+        color: $primary_color;
+        font-size: 36px;
+        font-weight: 500;
+        margin: 0 0 10px 0px;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+    .hostInfos {
+      display: flex;
+      width: 150px;
+      justify-content: space-between;
+      span {
+        color: $primary_color;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 10px 10px 0;
+        text-align: end;
+      }
+      .hostBox {
+        background-color: $bg_host;
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .tagStars {
+    display: flex;
+    justify-content: space-between;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        padding: 5px 10px;
+        margin-right: 10px;
+        background-color: $primary_color;
+        color: $third_color;
+        border-radius: 32px;
+        font-weight: 500;
+      }
+    }
+    i {
+      margin: 0 8px;
+      &.star {
+        color: $primary_color;
+      }
+
+      &.disableStars {
+        color: $bg_stars;
+      }
+    }
+  }
+}
+
+.description-equipment {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  .collapse-container {
+    width: 45%;
+  }
+}

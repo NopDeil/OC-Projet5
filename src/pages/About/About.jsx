@@ -7,7 +7,9 @@ import "./About.scss";
 function About() {
   return (
     <React.Fragment>
+      <section>
       <Banner titre_banner="" image_banner={banner_about} alt_banner="Bannière vue montagne"/>
+      </section>
       <section className="about">
         <Collapse titleCollapse="Fiabilité" textCollapse="Les annonces postées sur Kasa garentissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."/>
         <Collapse titleCollapse="Respect" textCollapse="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme"/>

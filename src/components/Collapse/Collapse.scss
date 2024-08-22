@@ -1,68 +1,71 @@
 @import "../../utils/variable.scss";
 
+.collapse-container {
+  margin-bottom: 30px;
+}
+
 .collapse {
   background-color: $primary_color;
-  margin-bottom: 30px;
   border-radius: 5px;
-
-  .collapse-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 50px;
-    cursor: pointer;
-  }
-
-  &[animation="1"] > .containerText {
-    animation: openCollapse 600ms forwards;
-  }
-
-  &[animation="0"] > .containerText {
-    animation: closeCollapse 600ms ease-in-out forwards;
-  }
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 
   h2 {
     color: $third_color;
-    margin-left: 15px;
+    margin: 0;
   }
 
   i {
     color: $third_color;
-    margin-right: 15px;
     font-size: x-large;
+    transition: transform 600ms;
 
     &[animation="1"] {
       transform: rotate(-180deg);
-      transition: transform 600ms;
     }
 
     &[animation="0"] {
       transform: rotate(0deg);
-      transition: transform 600ms;
     }
-  }
-
-  .containerText {
-    padding: 35px 30px 17px 30px;
-    background-color: lightgray;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 100%;
-    box-sizing: border-box;
-    opacity: 0;
-    max-height: 0;
   }
 }
 
+/* Animation pour le texte qui apparaît en dessous */
+.collapseText {
+  padding: 20px;
+  background-color: $bg_collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 600ms ease-in-out, opacity 600ms ease-in-out;
+}
+
+[animation="1"] + .collapseText {
+  max-height: 500px; /* Ajustez en fonction de la longueur du texte */
+  opacity: 1;
+  animation: openCollapse 600ms ease-in-out;
+}
+
+[animation="0"] + .collapseText {
+  max-height: 0;
+  opacity: 0;
+  animation: closeCollapse 600ms ease-in-out;
+}
+
+/* Keyframes conservées */
 @keyframes openCollapse {
   0% {
     opacity: 0;
     max-height: 0;
-    transform: translateY(-70px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
-    max-height: 400px;
+    max-height: 500px; /* Ajustez selon le besoin */
     transform: translateY(0);
   }
 }
@@ -70,12 +73,12 @@
 @keyframes closeCollapse {
   0% {
     opacity: 1;
-    max-height: 400px;
+    max-height: 500px;
     transform: translateY(0);
   }
   100% {
     opacity: 0;
     max-height: 0;
-    transform: translateY(-70px);
+    transform: translateY(-50px);
   }
 }
