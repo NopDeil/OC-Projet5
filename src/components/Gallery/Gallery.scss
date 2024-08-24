@@ -1,13 +1,15 @@
 @import "../../utils/variable.scss";
 
-$bg-gallery: #f6f6f6;
+
 
 .gallery {
-  background-color: #f6f6f6;
+  background-color: $bg-gallery;
   border-radius: 25px;
   width: 87%;
+  height: 100%;
   margin: auto;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }

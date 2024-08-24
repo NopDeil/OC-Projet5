@@ -14,7 +14,7 @@ function Collapse({ titleCollapse, textCollapse }) {
     setAnimation(0);
     setTimeout(() => {
       setIsOpen(false);
-    }, 590);
+    }, 5000);
   };
 
   return (

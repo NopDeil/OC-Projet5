@@ -17,6 +17,8 @@ function Accommodation() {
     }
   }, [dataInfos, navigate]);
 
+  if (!dataInfos) return null;
+
   const createTags = dataInfos.tags;
   console.log(createTags);
 

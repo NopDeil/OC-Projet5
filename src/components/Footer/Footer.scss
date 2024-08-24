@@ -2,17 +2,27 @@
 footer {
   width: 100%;
   height: 185px;
-  margin-top: 40px;
   background-color: $secondary_color;
   display: block;
   text-align: center;
   img {
     width: 122px;
     height: 40px;
-    margin: 55px auto 25px;
+    margin: 55px auto 20px;
   }
   p {
     color: $third_color;
     letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    img {
+      margin: 55px auto 0;
+    }
+    p {
+      font-size: 15px;
+    }
   }
 }

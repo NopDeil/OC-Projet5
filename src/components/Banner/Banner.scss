@@ -27,3 +27,45 @@
       -1px 1px 0 black;
   }
 }
+
+@media (max-width: 768px) {
+  .banner {
+    h1 {
+        margin: 70px 65px;
+        font-size: 37px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .banner {
+    height: 170px; // Réduit la hauteur de la bannière
+    img {
+      transform: scale(1.2); // Maintient le zoom de l'image
+    }
+  
+    h1 {
+      text-align: start;
+        margin: 40px 65px;
+        font-size: 30px;
+        text-shadow: none;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .banner{
+    width: 95%;
+  }
+}
+
+@media (max-width: 375px) {
+  .banner {
+    img {
+      transform: scale(1.3);
+    }
+  
+    h1 {
+      margin: 40px 36px;
+      font-size: 25px;
+    }
+  }
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Banner.scss";
 
 function Banner({ image_banner, titre_banner, alt_banner }) {

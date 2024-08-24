@@ -1,4 +1,10 @@
 .about {
-    width: 75%;
-    margin: auto;
+  width: 75%;
+  margin: auto;
+}
+
+@media (max-width: 576px) {
+  .about {
+    width: 90%;
+  }
 }

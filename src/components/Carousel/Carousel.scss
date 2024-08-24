@@ -3,7 +3,7 @@
 .carousel {
   border-radius: 25px;
   height: 415px;
-  background-color: #ff6060;
+  background-color: $secondary_color;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -12,6 +12,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 0.8;
   }
   i {
     position: absolute;
@@ -33,5 +34,16 @@
     bottom: 5%;
     left: 50%;
     color: white;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    i {
+     font-size: xx-large;
+    }
+    span {
+      z-index: -1;
+    }
   }
 }

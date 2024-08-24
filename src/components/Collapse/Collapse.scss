@@ -2,61 +2,78 @@
 
 .collapse-container {
   margin-bottom: 30px;
-}
+  .collapse {
+    background-color: $primary_color;
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 
-.collapse {
-  background-color: $primary_color;
-  border-radius: 5px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-
-  h2 {
-    color: $third_color;
-    margin: 0;
-  }
-
-  i {
-    color: $third_color;
-    font-size: x-large;
-    transition: transform 600ms;
-
-    &[animation="1"] {
-      transform: rotate(-180deg);
+    h2 {
+      color: $third_color;
     }
 
-    &[animation="0"] {
-      transform: rotate(0deg);
+    i {
+      color: $third_color;
+      font-size: x-large;
+      transition: transform 600ms;
+
+      &[animation="1"] {
+        transform: rotate(-180deg);
+      }
+
+      &[animation="0"] {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .collapseText {
+    padding: 20px;
+    background-color: $bg_collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 600ms ease-in-out, opacity 600ms ease-in-out;
+  }
+
+  [animation="1"] + .collapseText {
+    max-height: 500px; /* Ajustez en fonction de la longueur du texte */
+    opacity: 1;
+    animation: openCollapse 600ms ease-in-out;
+  }
+
+  [animation="0"] + .collapseText {
+    max-height: 0;
+    opacity: 0;
+    animation: closeCollapse 600ms ease-in-out;
+  }
+}
+
+@media (max-width: 576px) {
+  .collapse-container {
+    .collapse {
+      height: 20px;
+      h2 {
+        font-size: 1.1em;
+      }
+
+      i {
+        font-size: 1.1em;
+      }
+    }
+
+    .collapseText {
+      padding: 10px;
+      font-size: 0.9em;
     }
   }
 }
 
-/* Animation pour le texte qui apparaît en dessous */
-.collapseText {
-  padding: 20px;
-  background-color: $bg_collapse;
-  border-radius: 5px;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 600ms ease-in-out, opacity 600ms ease-in-out;
-}
-
-[animation="1"] + .collapseText {
-  max-height: 500px; /* Ajustez en fonction de la longueur du texte */
-  opacity: 1;
-  animation: openCollapse 600ms ease-in-out;
-}
-
-[animation="0"] + .collapseText {
-  max-height: 0;
-  opacity: 0;
-  animation: closeCollapse 600ms ease-in-out;
-}
-
-/* Keyframes conservées */
 @keyframes openCollapse {
   0% {
     opacity: 0;

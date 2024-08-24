@@ -4,7 +4,7 @@
   text-align: center;
   h2 {
     color: $primary_color;
-    font-size: 200px;
+    font-size: 13em;
     margin: 87px auto;
   }
   p {
@@ -16,4 +16,20 @@
     font-size: 15px;
     color: $secondary_color;
   }
+}
+
+@media (max-width: 576px) {
+  .error {
+      h2{
+          font-size: 8em;
+      }
+      p {
+        font-size: 21px;
+      }
+    
+      a {
+         font-size: 14px;
+      }
+  }
+  
 }

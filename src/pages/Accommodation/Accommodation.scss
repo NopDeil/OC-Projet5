@@ -13,6 +13,7 @@
         font-size: 36px;
         font-weight: 500;
         margin: 0 0 10px 0px;
+        font-size: 26px;
       }
       span {
         font-size: 18px;
@@ -75,5 +76,54 @@
   justify-content: space-between;
   .collapse-container {
     width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .accommodation {
+    .accommodation-description {
+      div {
+        h2 {
+          font-size: 22px;
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+      .hostInfos {
+        position: absolute;
+        right: 5%;
+        bottom: -2%;
+        span {
+          font-size: 15px;
+        }
+        .hostBox {
+          height: 45px;
+          width: 45px;
+          margin-top: 8px;  
+        }
+      }
+    }
+    .tagStars {
+      display: block;
+      .tags {
+        span {
+          border-radius: 10px;
+          padding: 5px 5px;
+        }
+      }
+      div {
+        margin-top: 25px;
+        i {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+  .description-equipment {
+    display: block;
+    .collapse-container {
+      width: 100%;
+    }
   }
 }
