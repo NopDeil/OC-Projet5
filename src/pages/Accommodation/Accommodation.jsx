@@ -49,19 +49,23 @@ function Accommodation() {
 
   return (
     <React.Fragment>
-      <section className="accommodation">
+      <section className="accommodation-carousel">
         <Carousel
           carouselPicture={dataInfos.pictures}
           altTitle={dataInfos.title}
         />
         {console.log(dataInfos.pictures.length)}
       </section>
+
       <section className="accommodation">
         <div className="accommodation-description">
           <div>
             <h2>{dataInfos.title}</h2>
             <span>{dataInfos.location}</span>
           </div>
+          <div className="tags">{tags()}</div>
+        </div>
+        <div className="hostStars">
           <div className="hostInfos">
             <span key={`${dataInfos.host.name}-${dataInfos.id}`}>
               {dataInfos.host.name}
@@ -72,12 +76,10 @@ function Accommodation() {
               alt={dataInfos.host.name}
             />
           </div>
-        </div>
-        <div className="tagStars">
-          <div className="tags">{tags()}</div>
-          <div>{rating()}</div>
+          <div className="stars">{rating()}</div>
         </div>
       </section>
+
       <section className="description-equipment">
         <Collapse
           titleCollapse="Description"

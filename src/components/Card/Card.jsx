@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 function Card({ id, title, cover }) {
   return (
-    <div className="card">
-      <Link to={`/accommodation/${id}`}>
+      <Link className="card" to={`/accommodation/${id}`}>
         <img src={cover} alt={title} />
+        <div>
         <h2>{title}</h2>
+        </div>
       </Link>
-    </div>
   );
 }
 

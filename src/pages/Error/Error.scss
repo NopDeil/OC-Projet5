@@ -2,6 +2,7 @@
 
 .error {
   text-align: center;
+  padding-bottom: 50px;
   h2 {
     color: $primary_color;
     font-size: 13em;
@@ -14,6 +15,7 @@
   }
   a {
     font-size: 15px;
+    
     color: $secondary_color;
   }
 }

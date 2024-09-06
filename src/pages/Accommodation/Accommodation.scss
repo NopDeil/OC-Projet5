@@ -1,35 +1,64 @@
 @import "../../utils/variable.scss";
 
+
+
+.accommodation-carousel {
+  width: 90%;
+  margin: 30px auto;
+}
+
 .accommodation {
   width: 90%;
   margin: 30px auto;
   .accommodation-description {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    margin: 15px 0;
+    flex-direction: column;
     div {
       h2 {
         color: $primary_color;
-        font-size: 36px;
+        font-size: 23px;
         font-weight: 500;
-        margin: 0 0 10px 0px;
-        font-size: 26px;
+        margin: 0 0 10px 0;
       }
       span {
         font-size: 18px;
         font-weight: 500;
       }
     }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      top: 20px;
+      span {
+        padding: 5px 10px;
+        margin-right: 10px;
+        background-color: $primary_color;
+        color: $third_color;
+            border-radius: 12px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+  }
+  .hostStars {
+    display: block;
+    height: 10px;
     .hostInfos {
       display: flex;
-      width: 150px;
-      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      bottom: 120px;
+      justify-content: end;
       span {
         color: $primary_color;
         font-size: 18px;
         font-weight: 500;
-        margin: 10px 10px 0;
+        word-wrap: break-word;
+        width: 78px;
         text-align: end;
+        margin-right: 10px;
       }
       .hostBox {
         background-color: $bg_host;
@@ -40,30 +69,20 @@
         object-position: center;
       }
     }
-  }
-  .tagStars {
-    display: flex;
-    justify-content: space-between;
-    .tags {
+    .stars {
       display: flex;
-      flex-wrap: wrap;
-      span {
-        padding: 5px 10px;
-        margin-right: 10px;
-        background-color: $primary_color;
-        color: $third_color;
-        border-radius: 32px;
-        font-weight: 500;
-      }
-    }
-    i {
-      margin: 0 8px;
-      &.star {
-        color: $primary_color;
-      }
-
-      &.disableStars {
-        color: $bg_stars;
+      align-items: center;
+      justify-content: end;
+      position: relative;
+      bottom: 83px;
+      i {
+        margin: 0 8px;
+        &.star {
+          color: $primary_color;
+        }
+        &.disableStars {
+          color: $bg_stars;
+        }
       }
     }
   }
@@ -79,51 +98,97 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .accommodation {
     .accommodation-description {
+      flex-direction: column;
       div {
         h2 {
-          font-size: 22px;
-        }
-        span {
-          font-size: 15px;
+          font-size: 26px;
         }
       }
-      .hostInfos {
-        position: absolute;
-        right: 5%;
-        bottom: -2%;
+      div {
         span {
-          font-size: 15px;
+          font-size: 16px;
         }
-        .hostBox {
-          height: 45px;
-          width: 45px;
-          margin-top: 8px;  
+      }
+      .tags {
+        position: static;
+        margin-top: 15px;
+        span {
+          font-size: 14px;
+          border-radius: 7px;
         }
       }
     }
-    .tagStars {
-      display: block;
-      .tags {
-        span {
-          border-radius: 10px;
-          padding: 5px 5px;
+
+    .hostStars {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      display: flex;
+      height: initial;
+      .hostInfos {
+        position: static;
+        .hostBox {
+          width: 48px;
+          height: 48px;
         }
       }
-      div {
-        margin-top: 25px;
+      .stars {
+        position: static;
         i {
-          margin: 0 5px;
+          margin: 0 6px;
         }
       }
     }
   }
+
   .description-equipment {
-    display: block;
+    flex-direction: column;
     .collapse-container {
       width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .accommodation {
+    .accommodation-description {
+      div h2 {
+        font-size: 23px;
+      }
+      div span {
+        font-size: 14px;
+      }
+      .tags {
+        span {
+          font-size: 13px;
+          padding: 5px 15px;
+          margin: 0 5px 5px 0;
+        }
+      }
+    }
+    .hostStars {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      .hostInfos {
+        .hostBox {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .stars {
+        i {
+          margin: 0 4px;
+        }
+      }
+    }
+    .description-equipment {
+      display: block;
+      .collapse-container {
+        width: 100%;
+      }
     }
   }
 }
