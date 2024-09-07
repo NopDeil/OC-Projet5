@@ -17,8 +17,9 @@
     div {
       h2 {
         color: $primary_color;
-        font-size: 23px;
+        font-size: 27px;
         font-weight: 500;
+        width: 83%;
         margin: 0 0 10px 0;
       }
       span {
@@ -109,7 +110,7 @@
       }
       div {
         span {
-          font-size: 16px;
+          font-size: 20px;
         }
       }
       .tags {
@@ -117,6 +118,7 @@
         margin-top: 15px;
         span {
           font-size: 14px;
+          padding: 5px 10px;
           border-radius: 7px;
         }
       }
@@ -156,15 +158,15 @@
   .accommodation {
     .accommodation-description {
       div h2 {
-        font-size: 23px;
+        font-size: 25px;
       }
       div span {
-        font-size: 14px;
+        font-size: 18px;
       }
       .tags {
         span {
           font-size: 13px;
-          padding: 5px 15px;
+          padding: 5px 5px;
           margin: 0 5px 5px 0;
         }
       }
